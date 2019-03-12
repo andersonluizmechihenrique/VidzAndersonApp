@@ -14,14 +14,21 @@ namespace VidzAnderson.API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "Anderson", "Henrique" };
+            var sArray= new string[] { "Anderson", "Henrique" };
+            return sArray;
+
         }
 
-        // GET api/values/5
+        // GET http//localhost:500/api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            var sArray= new string[] {"Anderson", "Henrique"};
+             if (id > (sArray.Length - 1))
+               return "O valor digitado é maior do que o disponivel";
+              
+              return sArray[id];
+
         }
 
         // POST api/values
